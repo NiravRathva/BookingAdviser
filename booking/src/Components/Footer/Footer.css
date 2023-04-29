@@ -1,0 +1,17 @@
+.footer{
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+
+   padding: 10px;
+    color: white;
+    text-align: center;
+background-color: rgb(31,7,51);
+}
+.footerText{
+    font-weight: 600;
+    text-align: center;
+
+}

@@ -1,0 +1,40 @@
+.hr{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.hrItem{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.hrimg{
+    width: 100%;
+    object-fit: cover;
+}
+.hrName{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.hrCity{
+    font-weight: 300;
+    text-transform: capitalize;
+}
+.hrprice{
+    font-weight: 800;
+    color: rgb(237,168,74);
+}
+.rating>button{
+    color: white;
+    background-color:rgb(82,53,108);
+    border: none;
+    outline: none;
+    padding: 2px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+.rating>span{
+font-size: 16px;
+}
