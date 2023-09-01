@@ -1,32 +1,48 @@
 .login {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
   }
   
   .lContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box shadow */
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
   }
   
   .lInput{
-    height: 30px;
-    padding: 10px;
+    height: 40px;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90%;
   }
   
   .lButton {
     border: none;
-    padding: 10px 20px;
-    background-color: #0071c2;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100%;
   }
   
   .lButton:disabled{
     background-color: #0071c28c;
     cursor: not-allowed;
+  
+  }.lButton:hover {
+    background-color: #005ca8; 
   }
+  
+  
