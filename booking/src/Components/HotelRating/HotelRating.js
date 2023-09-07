@@ -2,11 +2,12 @@ import './HotelRating.css'
 import useFetch from "../../hooks/useFetch";
 const HotelRating = () => {
     const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
+    console.log(loading)
     return (
 
         <div className="hr">
             {loading ? (
-                "Loading"
+                <h1>Loading</h1>
             ) : (
                 <>
                     {data.map((item) => (
