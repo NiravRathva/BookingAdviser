@@ -24,7 +24,6 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post("/auth/login", credentials);
-      console.log(res.data.details)
       const loggedInUser = res.data.details
       authContext.login(loggedInUser)
       navigate("/");

@@ -40,10 +40,9 @@ const SignUp = () => {
                 password: formData.password,
             },
             );
-            console.log(response)
             navigate("/")
         } catch (error) {
-            setError('An error occurred during signup.', console.log(error));
+            setError('An error occurred during signup.',error);
         }
     };
 
