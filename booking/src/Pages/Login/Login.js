@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+// import { AuthContextProvider } from "../../context/AuthContext";
 import "./Login.css";
 
 const Login = () => {
@@ -10,7 +11,8 @@ const Login = () => {
     password: undefined,
   });
 
-  const { loading, error, login, setError } = useContext(AuthContext); 
+  // const {login,error,loading}=AuthContextProvider
+  const authContext = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -22,10 +24,12 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post("/auth/login", credentials);
-      login({ token: res.data.details.token, UserType: res.data.details.UserType });
+      console.log(res.data.details)
+      const loggedInUser = res.data.details
+      authContext.login(loggedInUser)
       navigate("/");
     } catch (err) {
-      setError(err.response.data.message);
+      console.log(err)
     }
   };
 
@@ -47,10 +51,10 @@ const Login = () => {
           onChange={handleChange}
           className="lInput"
         />
-        <button disabled={loading} onClick={handleClick} className="lButton">
+        <button disabled={authContext.loading} onClick={handleClick} className="lButton">
           Login
         </button>
-        {error && <span>{error.message}</span>}
+        {authContext.error && <span>{authContext.error.message}</span>}
       </div>
     </div>
   );

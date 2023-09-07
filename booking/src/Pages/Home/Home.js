@@ -9,6 +9,14 @@ import PropertyList from '../../Components/propertyList/propertyList'
 import "./Home.css"
 import Mail from '../../Components/Mail/Mail'
 const Home = () => {
+  // Access and log the 'access_token' cookie
+const accessToken = document.cookie.match('(^|;)\\s*access_token\\s*=\\s*([^;]+)');
+if (accessToken) {
+    console.log("Access Token:", accessToken[2]);
+} else {
+    console.log("'access_token' cookie not found");
+}
+
   return (
     <>
       <Navbar />
